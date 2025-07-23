@@ -4,14 +4,14 @@ import torch
 import logging
 import numpy as np
 import random
-from NEW_GCN_NODE_TRANSFORMER.networks.forum探索版时序Model8  import TransGRUNet_1_4,TransGRUNet_2_4
+from NODE_TRANSFORMER.networks.forum探索版时序Model8  import TransGRUNet_1_4,TransGRUNet_2_4
 import torch.nn as nn
 from tqdm import tqdm
-from NEW_GCN_NODE_TRANSFORMER.functions.utils import read_one_hot,deal_Graph
+from NODE_TRANSFORMER.functions.utils import read_one_hot,deal_Graph
 from torch_geometric.loader import DataLoader
 from functions.precision_index import show_metrics_AUPRC_new
 from functions.negetive_increase import balance_features_labels,balance_features_labels_new
-from NEW_GCN_NODE_TRANSFORMER.functions.new_utils import parse_graphs_to_dataset_forum,parse_graphs_to_dataset
+from NODE_TRANSFORMER.functions.new_utils import parse_graphs_to_dataset_forum,parse_graphs_to_dataset
 from torch import optim
 
 

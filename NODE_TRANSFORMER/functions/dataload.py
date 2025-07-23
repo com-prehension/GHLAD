@@ -1,8 +1,8 @@
 import os
-from NEW_GCN_NODE_TRANSFORMER.functions.构建树 import build_tree_from_txt,construct_tree_to_nx
+from NODE_TRANSFORMER.functions.构建树 import build_tree_from_txt,construct_tree_to_nx
 import random
 import networkx as nx
-from NEW_GCN_NODE_TRANSFORMER.functions.utils import read_file_one_hot_new,read_exception_one_hot_new,read_one_hot
+from NODE_TRANSFORMER.functions.utils import read_file_one_hot_new,read_exception_one_hot_new,read_one_hot
 def open_file(directory,result):
 
     for root, dirs, files in os.walk(directory):

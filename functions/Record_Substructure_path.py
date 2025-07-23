@@ -1,6 +1,6 @@
 
 import random
-from NEW_GCN_NODE_TRANSFORMER.functions.构建树 import *
+from NODE_TRANSFORMER.functions.构建树 import *
 
 def open_file(directory,result):
 

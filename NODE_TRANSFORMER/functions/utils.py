@@ -1,6 +1,6 @@
 import os
 import torch
-from NEW_GCN_NODE_TRANSFORMER.functions.构建树 import  build_tree_from_txt,construct_tree_to_nx,\
+from NODE_TRANSFORMER.functions.构建树 import  build_tree_from_txt,construct_tree_to_nx,\
      process_trees_to_construct_tree_chains,construct_tree_to_nx_with_filemap, \
     construct_tree_to_nx_with_filemap_and_high_subgraph\
     ,construct_layered_graph,construct_tree_to_nx_with_filemap_position,construct_tree_to_nx_with_filemap_layerfeatures, \
@@ -9,7 +9,7 @@ from NEW_GCN_NODE_TRANSFORMER.functions.构建树 import  build_tree_from_txt,co
 from torch_geometric.data import Data
 from torch_geometric.loader import DataLoader
 import torch_geometric
-from NEW_GCN_NODE_TRANSFORMER.functions.构件图_链条 import deal_tree_to_chain
+from NODE_TRANSFORMER.functions.构件图_链条 import deal_tree_to_chain
 
 from functions.precision_index import show_metrics_AUPRC_new
 import random

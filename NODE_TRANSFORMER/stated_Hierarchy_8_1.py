@@ -1,7 +1,7 @@
 import warnings
 from datetime import datetime
 from functions.set_seed import *
-from NEW_GCN_NODE_TRANSFORMER.new_model.Multi_Layer_forum_8 import  main as run_forum
+from NODE_TRANSFORMER.new_model.Multi_Layer_forum_8 import  main as run_forum
 from functions.dataload import search_specify_data_from_dataname_for_halo,search_specify_data_from_dataname_for_forum,read_exist_substructure_to_datatxt_for_forum,read_exist_substructure_to_datatxt_for_halo
 
 
