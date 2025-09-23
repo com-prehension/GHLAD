@@ -9,14 +9,14 @@ from functions.dataload import search_specify_data_from_dataname_for_halo,search
 warnings.filterwarnings("ignore")
 
 
-"""该启动程序主要应用于halo的层次学习"""
+"""该启动程序主要应用于启动程序"""
 def stated_train_run():
     dataname = "forum"
     # dataname = "novel"
     # dataname="halo"
     specify_data = True
-    specify_number="10"
-    storage_number = "新动态中心-100"
+    specify_number="2"
+    storage_number = "701"
     start_time = datetime.now()
     print("First Model training started at:", start_time)
 
@@ -38,7 +38,7 @@ def stated_train_run():
         else:
             train_tree_set, val_tree_set, test_data_list, test_one_list = read_exist_substructure_to_datatxt_for_forum(
                 dataname, train_ratio=0.8, val_ratio=0.1, record=1, specify_number=specify_number)
-        root = f"/root/autodl-tmp/project/新result_5/novel/划分数据集/"
+        root = f"/root/autodl-tmp/project/新result_8/{dataname}/划分数据集/"
 
     storage_path = root + f"no.{storage_number}_result.txt"
     storage_loss_path = root + f"no.{storage_number}_loss.txt"
