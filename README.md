@@ -11,7 +11,7 @@ GHLAD is a code file-level log anomaly detection framework designed to address k
 ## 2. Core Workflow
 ### 2.1 Log Graph Construction
 Convert raw log data (containing timestamp, code file, event type, execution duration, exception info) into a directed log graph \( G=(V,E) \):  
-- Nodes \( V \): Each node represents a log message, defined as \( v=(file, event, cost, excep) \) (code file, event type, execution duration, exception type).  
+- Nodes \( V \): Each node represents a code file in a log entry (i.e., the code file that executes the current event).  
 - Edges \( E \): Directed edges indicate invocation relationships between code files (e.g., \( e(v_i,v_j) \) means \( v_i \)'s code file invokes \( v_j \)'s).
 
 ### 2.2 Key Modules
@@ -31,5 +31,13 @@ GHLAD consistently outperforms baselines (e.g., PCA, SVM, GIN, DeepLog, SLAD) ac
 
 
 ## 4. Resources
-- **Paper**: *Log Anomaly Detection Based on Graph Hierarchy.pdf* (details on methodology, experiments, and results).  
-- **Code & Data**: Source code, experimental datasets, and tools are available at: [https://github.com/com-prehension/GHLAD](https://github.com/com-prehension/GHLAD)
+- **Data**: Our datasets are in the dataset folder and are in .zip format. Please unzip them before conducting experiments and use them as needed.
+
+# How to run code
+
+## 1. Clone the Repository
+Pull the GHLAD code and experimental data from the official repo (linked in the paper):
+```bash
+git clone https://github.com/com-prehension/GHLAD.git
+```
+
