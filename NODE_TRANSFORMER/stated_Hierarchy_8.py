@@ -8,7 +8,7 @@ from functions.dataload import search_specify_data_from_dataname_for_halo,search
 warnings.filterwarnings("ignore")
 
 
-"""该启动程序主要应用于halo的层次学习"""
+"""该启动程序主要应用于启动程序"""
 def stated_train_run():
 
     for specify_number in [18]:
