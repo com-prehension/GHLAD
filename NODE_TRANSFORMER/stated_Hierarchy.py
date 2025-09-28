@@ -74,11 +74,11 @@ if __name__ == "__main__":
     # 核心参数
     parser.add_argument("--dataname", type=str, default="forum",
                         help="数据集名称 (forum/novel/halo)")
-    parser.add_argument("--specify_data", type=bool, default=True,
+    parser.add_argument("--specify_data", type=bool, default=False,
                         help="是否使用指定数据集 (默认不使用)")
     parser.add_argument("--specify_number", type=str, default="2",
                         help="指定数据集编号")
-    parser.add_argument("--storage_number", type=str, default="801-T",
+    parser.add_argument("--storage_number", type=str, default="Test001",
                         help="结果文件编号")
 
     # 路径参数
