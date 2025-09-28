@@ -41,3 +41,50 @@ Pull the GHLAD code and experimental data from the official repo (linked in the 
 git clone https://github.com/com-prehension/GHLAD.git
 ```
 
+## 2. Prepare Dataset
+1. Download the dataset (link available in the paper)
+2. Unzip the dataset files
+3. Place the unzipped dataset folders into the project's "dataset" directory
+   Required structure:
+   GHLAD/
+   └── dataset/
+       ├── forum/
+       ├── novel/
+       └── halo/
+
+
+## 3. Run the Code
+
+### Basic Usage (Default Parameters)
+Execute with default settings:
+python stated_Hierarchy.py
+
+
+### Advanced Usage (Custom Parameters)
+To specify custom parameters, use this format:
+python stated_Hierarchy.py \
+    --dataname "forum" \
+    --specify_data false \
+    --specify_number "1" \
+    --storage_number "test" \
+    --project_root "/path/to/your/GHLAD" \
+    --dataset_dir "/path/to/custom/dataset" \
+    --result_dir "/path/to/save/results" \
+    --train_ratio 0.8 \
+    --val_ratio 0.1 \
+    --seed 42
+
+
+### Parameter Explanations
+--dataname        : Dataset name (forum/novel/halo) - default: "forum"
+--specify_data    : Use specific dataset subset (true/false) - default: false
+--specify_number  : Specific dataset identifier (when specify_data=true) - default: "1"
+--storage_number  : Result file identifier - default: "test"
+--project_root    : Absolute path to project root - default: auto-calculated
+--dataset_root     : Custom dataset path - default: [project_root]/dataset
+--result_dir      : Custom results path - default: [project_root]/result
+--train_ratio     : Training data proportion (0-1) - default: 0.8
+--val_ratio       : Validation data proportion (0-1) - default: 0.1
+--seed            : Random seed for reproducibility - default: 42
+
+
