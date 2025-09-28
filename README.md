@@ -46,16 +46,13 @@ git clone https://github.com/com-prehension/GHLAD.git
 2. Unzip the dataset files
 3. Place the unzipped dataset folders into the project's "dataset" directory
    Required structure:
-   
+   ```bash
    GHLAD/
-   
       dataset/
-   
           forum/
-   
           novel/
-   
           halo/
+   ```
 
 
 ## 3. Run the Code
