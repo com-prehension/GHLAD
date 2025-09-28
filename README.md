@@ -31,7 +31,7 @@ GHLAD consistently outperforms baselines (e.g., PCA, SVM, GIN, DeepLog, SLAD) ac
 
 
 ## 4. Resources
-- **Data**:: Our datasets are stored at [GHLAD_DataSet](https://zenodo.org/records/17219017). You can download them from this link, or use the .zip files in the project's "dataset" folder (unzip first before use).
+- **Data**: Our datasets are stored at [GHLAD_DataSet](https://zenodo.org/records/17219017). You can download them from this link, or use the .zip files in the project's "dataset" folder (unzip first before use).
 
 # How to run code
 
