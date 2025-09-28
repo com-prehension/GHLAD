@@ -82,15 +82,15 @@ python stated_Hierarchy.py \
 
 
 ### Parameter Explanations
---dataname        : Dataset name (forum/novel/halo) - default: "forum"
---specify_data    : Use specific dataset subset (true/false) - default: false
---specify_number  : Specific dataset identifier (when specify_data=true) - default: "1"
---storage_number  : Result file identifier - default: "test"
---project_root    : Absolute path to project root - default: auto-calculated
---dataset_root     : Custom dataset path - default: [project_root]/dataset
---result_dir      : Custom results path - default: [project_root]/result
---train_ratio     : Training data proportion (0-1) - default: 0.8
---val_ratio       : Validation data proportion (0-1) - default: 0.1
---seed            : Random seed for reproducibility - default: 42
+--dataname        : Dataset name (forum/novel/halo) - default: "forum".
+--specify_data    : Use specific dataset subset (true/false) - default: false.
+--specify_number  : Specific dataset identifier (when specify_data=true) - default: "1".
+--storage_number  : Result file identifier - default: "test".
+--project_root    : Absolute path to project root - default: auto-calculated.
+--dataset_root     : Custom dataset path - default: [project_root]/dataset.
+--result_dir      : Custom results path - default: [project_root]/result.
+--train_ratio     : Training data proportion (0-1) - default: 0.8.
+--val_ratio       : Validation data proportion (0-1) - default: 0.1.
+--seed            : Random seed for reproducibility - default: 42.
 
 
