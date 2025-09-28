@@ -65,7 +65,7 @@ python stated_Hierarchy.py
 
 
 ### Advanced Usage (Custom Parameters)
-To specify custom parameters, use this format:
+If you need to customize parameters , use the command format below. Replace the parameter values with your actual needs:
 ```bash
 python stated_Hierarchy.py \
     --dataname "forum" \
