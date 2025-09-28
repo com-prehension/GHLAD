@@ -47,21 +47,24 @@ git clone https://github.com/com-prehension/GHLAD.git
 3. Place the unzipped dataset folders into the project's "dataset" directory
    Required structure:
    GHLAD/
-   └── dataset/
-       ├── forum/
-       ├── novel/
-       └── halo/
+      dataset/
+          forum/
+          novel/
+          halo/
 
 
 ## 3. Run the Code
 
 ### Basic Usage (Default Parameters)
 Execute with default settings:
+```bash
 python stated_Hierarchy.py
+```
 
 
 ### Advanced Usage (Custom Parameters)
 To specify custom parameters, use this format:
+```bash
 python stated_Hierarchy.py \
     --dataname "forum" \
     --specify_data false \
@@ -73,6 +76,7 @@ python stated_Hierarchy.py \
     --train_ratio 0.8 \
     --val_ratio 0.1 \
     --seed 42
+```
 
 
 ### Parameter Explanations
