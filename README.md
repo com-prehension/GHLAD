@@ -60,6 +60,7 @@ git clone https://github.com/com-prehension/GHLAD.git
 ### Basic Usage (Default Parameters)
 Execute with default settings:
 ```bash
+cd GHLAD/NODE_TRANSFORMER/
 python stated_Hierarchy.py
 ```
 
