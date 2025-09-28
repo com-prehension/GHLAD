@@ -82,6 +82,7 @@ python stated_Hierarchy.py \
 
 
 ### Parameter Explanations
+```bash
 --dataname        : Dataset name (forum/novel/halo) - default: "forum".
 --specify_data    : Use specific dataset subset (true/false) - default: false.
 --specify_number  : Specific dataset identifier (when specify_data=true) - default: "1".
@@ -92,5 +93,6 @@ python stated_Hierarchy.py \
 --train_ratio     : Training data proportion (0-1) - default: 0.8.
 --val_ratio       : Validation data proportion (0-1) - default: 0.1.
 --seed            : Random seed for reproducibility - default: 42.
+```
 
 
