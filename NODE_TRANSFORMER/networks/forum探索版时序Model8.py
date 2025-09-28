@@ -153,12 +153,13 @@ class TransGRUNet_1_4(torch.nn.Module):
         self.bn4 = nn.LayerNorm(hidden_dim4)
 
         # self.dropout = dropout
+        self.max_layer=max_levels
         self.activation = nn.GELU()
         self.linear1 = torch.nn.Linear(hidden_dim4, 8)
         self.linear2 = torch.nn.Linear(8, output_dim)
         self.sigmoid = nn.Sigmoid()
 
-    def forward(self, x, tree_edge_index,call_sequences,batch,prin=0):
+    def forward(self, x, tree_edge_index,call_sequences,batch,max_len,prin=0):
 
         x = self.conv1(x, tree_edge_index)
         x = self.bn1(x)
@@ -278,6 +279,7 @@ class TransGRUNet_1_4(torch.nn.Module):
             global_outputs[valid_indices] = layer_output[layer_mask == 0]
 
         return global_outputs
+
 
 
 

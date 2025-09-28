@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 # from 提取语义 import get_event_embedding_from_file
 # from node2vec_args import args_parser
 # from node2vec_main import traverse_graphs_handle
-from functions.Seacher_high_Graph import find_high_order_subgraph
+# from functions.Seacher_high_Graph import find_high_order_subgraph
 
 class Node:
     def __init__(self, trace_id, name):
@@ -213,7 +213,8 @@ def construct_tree_to_nx_with_filemap_and_high_subgraph(tree, event_map,file_nam
     traverse(tree)
 
     order=3
-    G_high_order = find_high_order_subgraph(G,order)
+    # G_high_order = find_high_order_subgraph(G,order)
+    G_high_order=1
 
     return G,G_high_order
 

@@ -4,14 +4,14 @@ import torch
 import logging
 import numpy as np
 import random
-from NODE_TRANSFORMER.networks.forum探索版时序Model8  import TransGRUNet_1_4,TransGRUNet_2_4
+from networks.forum探索版时序Model8  import TransGRUNet_1_4,TransGRUNet_2_4
 import torch.nn as nn
 from tqdm import tqdm
-from NODE_TRANSFORMER.functions.utils import read_one_hot,deal_Graph
+from functions.utils import read_one_hot,deal_Graph
 from torch_geometric.loader import DataLoader
 from functions.precision_index import show_metrics_AUPRC_new
 from functions.negetive_increase import balance_features_labels,balance_features_labels_new
-from NODE_TRANSFORMER.functions.new_utils import parse_graphs_to_dataset_forum,parse_graphs_to_dataset
+from functions.new_utils import parse_graphs_to_dataset_forum,parse_graphs_to_dataset
 from torch import optim
 
 
@@ -27,7 +27,7 @@ def validation(net, t_val_dataloader,val_result_list,device,storage_path, rewrit
     with torch.no_grad():
         for tree in t_val_dataloader:
             tree=tree.to(device)
-            output,distance = net(tree.x , tree.edge_index,tree.w,tree.batch)
+            output,distance = net(tree.x , tree.edge_index,tree.w,tree.batch,tree.max_len)
             loss = criterion(output.squeeze().float(), tree.y.float())
             total_loss += loss.item()
             # total_node_num += batch.num_nodes
@@ -59,7 +59,7 @@ def train(net,train_dataloader,device,xent,optimizer,logger,train_loss_list,sche
         tree = tree.to(device)
 
         optimizer.zero_grad()
-        outputs,distance = net(tree.x, tree.edge_index, tree.w, tree.batch)
+        outputs,distance = net(tree.x, tree.edge_index, tree.w, tree.batch,tree.max_len)
 
         # print(outputs)
 
@@ -269,7 +269,7 @@ def main(dataname,train_tree_set, val_tree_set, test_data_set, test_one_set,stor
 
             # 一张图
             tree = tree.to(device)
-            embeds,distance = net(tree.x, tree.edge_index,tree.w,tree.batch,prin=1)
+            embeds,distance = net(tree.x, tree.edge_index,tree.w,tree.batch,tree.max_len,prin=1)
 
             pred_prob = embeds.squeeze().cpu().numpy()
 
@@ -343,7 +343,7 @@ def main(dataname,train_tree_set, val_tree_set, test_data_set, test_one_set,stor
             # 一张图
             tree = tree.to(device)
 
-            embeds,distance = net(tree.x, tree.edge_index,tree.w,tree.batch)
+            embeds,distance = net(tree.x, tree.edge_index,tree.w,tree.batch,tree.max_len)
 
             pred_prob = embeds.squeeze().cpu().numpy()
 

@@ -1,8 +1,8 @@
 import os
-from NODE_TRANSFORMER.functions.构建树 import build_tree_from_txt,construct_tree_to_nx
+from functions.构建树 import build_tree_from_txt,construct_tree_to_nx
 import random
 import networkx as nx
-from NODE_TRANSFORMER.functions.utils import read_file_one_hot_new,read_exception_one_hot_new,read_one_hot
+from functions.utils import read_file_one_hot_new,read_exception_one_hot_new,read_one_hot
 def open_file(directory,result):
 
     for root, dirs, files in os.walk(directory):
@@ -455,20 +455,29 @@ def construct_tree_to_nx_layerfeatures_forum_layerfeats(tree, event_map, file_na
 
 
 """用于halo数据集的读取——logGD寻找划分使用"""
-def read_exist_substructure_to_datatxt_for_halo(dataname, train_ratio, val_ratio, record, specify_number):
+def read_exist_substructure_to_datatxt_for_halo(dataname,dataset, train_ratio, val_ratio, record, specify_number):
     result = {}
     train_paths = []
     val_paths = []
     test_paths = []
     test_one_paths = []
 
-    root = f"/root/autodl-tmp/project/data_2/{dataname}_data/新"
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    # 假设项目根目录GHLAD是当前文件的三级父目录
+    project_root = os.path.abspath(os.path.join(current_dir, ".."))
+    # 构建dataset目录的绝对路径
+    datatxt_root = os.path.join(project_root, "data")
+
+    root = datatxt_root + f"/{dataname}/新"
 
     graph_structure_path = root + f"graph_structure_path_dict{specify_number}.txt"
 
     specific_dataset_path = root + f"specific_dataset{specify_number}.txt"
 
-    directory = f"/root/autodl-tmp/project/data/{dataname}"
+    dataset_root = os.path.join(project_root, "dataset")
+
+    # directory = dataset_root + f"/{dataname}"
+    directory = dataset
 
     i = 0
     sub_result = []
@@ -528,7 +537,7 @@ def read_exist_substructure_to_datatxt_for_halo(dataname, train_ratio, val_ratio
                 file.write("\n")
             file.close()
 
-    root = f"/root/autodl-tmp/project/data/{dataname}_data/"
+    root = datatxt_root + f"/{dataname}/"
 
     event_embedding_path = root + r"events_compress_one_hot.txt"
     file_embedding_path = root + r"file_name_one_hot.txt"
@@ -940,12 +949,24 @@ def search_specify_data_from_dataname_for_forum_layerfeats(dataname, specify_num
 
 
 def search_specify_data_from_dataname_for_forum(dataname, specify_number):
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    # 假设项目根目录GHLAD是当前文件的三级父目录
+    project_root = os.path.abspath(os.path.join(current_dir, ".."))
+    # 构建dataset目录的绝对路径
+    dataset_root = os.path.join(project_root, "data")
+
+    # root = f"/root/autodl-tmp/project/data/{dataname}_data/新"
+    # root = f"/root/autodl-tmp/project/data_2/{dataname}_data/新"
+    # root = f"/root/autodl-tmp/project/data_4/{dataname}_data/新"
+
+    root = dataset_root + f"/{dataname}/新"
+
     # root = f"/root/autodl-tmp/project/data/{dataname}_data/新划分/"
     # root = f"/root/autodl-tmp/project/data/{dataname}_data/新"
     # root = f"/root/autodl-tmp/project/data/{dataname}_data/"
     # root = f"/root/autodl-tmp/project/data_2/{dataname}_data/新"
     # root = f"/root/autodl-tmp/project/data_3/{dataname}_data/新"
-    root = f"/root/autodl-tmp/project/data_4/{dataname}_data/新"
+    # root = f"/root/autodl-tmp/project/data_4/{dataname}_data/新"
 
     # graph_structure_path = root + f"graph_structure_path_dict{specify_number}.txt"
 
@@ -956,7 +977,7 @@ def search_specify_data_from_dataname_for_forum(dataname, specify_number):
     test_paths = []
     test_one_paths = []
 
-    root = f"/root/autodl-tmp/project/data/{dataname}_data/"
+    root = dataset_root + f"/{dataname}/"
 
     event_embedding_path = root + r"events_compress_one_hot.txt"
     file_embedding_path = root + r"file_name_one_hot.txt"
@@ -1052,20 +1073,37 @@ def parse_log_file(log_file_path):
 
 
 """用于forum数据集的读取——logGD寻找划分使用"""
-def read_exist_substructure_to_datatxt_for_forum(dataname, train_ratio, val_ratio, record, specify_number):
+def read_exist_substructure_to_datatxt_for_forum(dataname,dataset, train_ratio, val_ratio, record, specify_number):
     result = {}
     train_paths = []
     val_paths = []
     test_paths = []
     test_one_paths = []
 
-    root = f"/root/autodl-tmp/project/data_4/{dataname}_data/新/新"
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    # 假设项目根目录GHLAD是当前文件的三级父目录
+    project_root = os.path.abspath(os.path.join(current_dir, ".."))
+    # 构建dataset目录的绝对路径
+    datatxt_root = os.path.join(project_root, "data")
+
+    root = datatxt_root + f"/{dataname}/新"
 
     graph_structure_path = root + f"graph_structure_path_dict{specify_number}.txt"
 
     specific_dataset_path = root + f"specific_dataset{specify_number}.txt"
 
-    directory = f"/root/autodl-tmp/project/data/{dataname}"
+    dataset_root = os.path.join(project_root, "dataset")
+
+    # directory = dataset
+
+    directory = dataset
+    # root = f"/root/autodl-tmp/project/data_4/{dataname}_data/新/新"
+    #
+    # graph_structure_path = root + f"graph_structure_path_dict{specify_number}.txt"
+    #
+    # specific_dataset_path = root + f"specific_dataset{specify_number}.txt"
+    #
+    # directory = f"/root/autodl-tmp/project/data/{dataname}"
     # directory = f"/root/autodl-tmp/project/data/{dataname}/负样本/手动注错/陈威负样本/1-陈威日志测试 -call_change/abstra/文章审核不通过"
 
     i = 0
@@ -1130,7 +1168,7 @@ def read_exist_substructure_to_datatxt_for_forum(dataname, train_ratio, val_rati
                 file.write("\n")
             file.close()
 
-    root = f"/root/autodl-tmp/project/data/{dataname}_data/"
+    root = datatxt_root + f"/{dataname}/"
 
     event_embedding_path = root + r"events_compress_one_hot.txt"
     file_embedding_path = root + r"file_name_one_hot.txt"
@@ -1454,10 +1492,20 @@ def construct_tree_to_nx_with_filemap_layerfeatures(tree, event_map, file_name_m
 
     return G
 
+import os
 def search_specify_data_from_dataname_for_halo(dataname, specify_number):
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    # 假设项目根目录GHLAD是当前文件的三级父目录
+    project_root = os.path.abspath(os.path.join(current_dir, ".."))
+    # 构建dataset目录的绝对路径
+    dataset_root = os.path.join(project_root, "data")
+
     # root = f"/root/autodl-tmp/project/data/{dataname}_data/新"
     # root = f"/root/autodl-tmp/project/data_2/{dataname}_data/新"
-    root = f"/root/autodl-tmp/project/data_4/{dataname}_data/新"
+    # root = f"/root/autodl-tmp/project/data_4/{dataname}_data/新"
+
+
+    root = dataset_root + f"/{dataname}_data/新"
 
     # graph_structure_path = root + f"graph_structure_path_dict{specify_number}.txt"
 
@@ -1473,7 +1521,7 @@ def search_specify_data_from_dataname_for_halo(dataname, specify_number):
     test_paths = []
     test_one_paths = []
 
-    root = f"/root/autodl-tmp/project/data/{dataname}_data/"
+    root = dataset_root + f"/{dataname}_data/"
 
     event_embedding_path = root + r"events_compress_one_hot.txt"
     file_embedding_path = root + r"file_name_one_hot.txt"
